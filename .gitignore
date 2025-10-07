@@ -1,0 +1,30 @@
+﻿*.backup-*
+*.bak
+*.broken-*
+*.cmd
+.DS_Store
+.env*
+.idea/
+.next/
+.vercel
+.vercel/
+.vscode/
+app/*.bak*
+node_modules/
+npm-debug.log*
+out/
+package-lock.json
+public/sitemap-*.xml
+Thumbs.db
+
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+
+
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+
