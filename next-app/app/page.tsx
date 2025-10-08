@@ -5,8 +5,9 @@ export default function Home() {
   // --- CONFIGURATION VARIABLES ---
   const logoPath = '/images/logos/igneous-property-logo.png';
   const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
-  const masterPlanPath = '/images/floorplans/master-floor-plan.jpg'; // Colour-coded master plan
-  const heroImagePath = '/images/lifestyle/cornerstone-hero.jpg'; // Main architectural render
+  const masterPlanPath = '/images/floorplans/master-floor-plan.jpg'; // Path to the colour-coded master plan
+  const heroImagePath = '/images/lifestyle/cornerstone-hero.jpg'; // Path to the main architectural render
+  const whatsappNumber = '27724503626'; // Your WhatsApp number
 
   // Data for the Features & Amenities Section (using icons/emojis as placeholders)
   const mainFeatures = [
@@ -365,7 +366,7 @@ export default function Home() {
                 </p>
                 <p className="mb-3">
                   <span className="font-bold text-gray-900">WhatsApp:</span>{' '}
-                  <a href="https://wa.me/27724503626" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     +27 72 450 3626
                   </a>
                 </p>
@@ -418,6 +419,20 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ======================================================================
+        FLOATING WHATSAPP BUTTON
+        ====================================================================== */}
+      <a
+        href={`https://wa.me/${whatsappNumber}`}
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition duration-300 ease-in-out transform hover:scale-110 z-50"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        {/* WhatsApp Icon Placeholder (using emoji) */}
+        <span className="text-2xl">💬</span>
+      </a>
     </div>
   );
 }
