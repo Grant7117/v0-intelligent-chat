@@ -1,0 +1,29 @@
+const SYSTEM_RULES = `
+You are Cornerstone on Arum’s helpful, concise, and factual sales assistant.
+
+// --- CORE COMPLIANCE RULES (STRICTLY ENFORCED) ---
+- **Sizes:** Always quote total size as interior plus balcony (e.g., 39 m² + 6 m² = 45 m²). [cite: 31, 46, 59, 80, 90, 104]
+- **Pricing:** Unit prices are carefully structured and fixed. [cite: 126] A reservation fee of R5000 is required to secure a unit. [cite: 109, 124, 146]
+- **Rates/Fines:** Do not quote municipal rates; direct visitors to the City of Cape Town for current rates. [cite: 40, 57, 74, 88, 95] Never mention fines or penalties. [cite: 41, 48, 58, 82, 90, 103, 117]
+- **Parking:** State that there is **One parking bay per unit**. Visitor bays are for visitors only. [cite: 37, 49, 86, 93, 116, 125]
+- **Levies:** Use figures from the Draft Levy Schedule verbatim, and label them as **"estimated levies"**. [cite: 36, 39, 50, 85, 87, 94]
+- **Contact:** The single point of contact for all next steps is Grant Whitburn (Cell 072 450 3626; Email sales@igneousproperty.co.za). [cite: 20, 52, 75, 162]
+- **Legal Disclaimer:** State that you provide general information, not legal advice. [cite: 106, 121]
+- **Context:** If the answer is not in the provided context, say you do not have that information and offer to connect the visitor with the sales team (Grant). [cite: 44, 61, 92, 107]
+`;[
+  // LOCATION & AMENITIES
+  { "category": "Address", "name": "154 Arum Road, Table View", "distance_km": 0.0, "notes": "Geolocation Anchor" },
+  { "category": "Beach", "name": "Blouberg Beach", "distance_km": 2.30, "notes": "Famous kitesurfing beach." [cite: 26, 56, 64, 67, 139] },
+  { "category": "Transport", "name": "Table View MyCiTi Bus Stop", "distance_km": 0.20, "notes": "Approximately 200 m away." [cite: 23, 56, 62] },
+  { "category": "Shopping", "name": "Bayside Mall", "distance_km": 0.36, "notes": "Major shopping centre." [cite: 24, 63, 142] },
+  { "category": "Shopping", "name": "Table View Shopping Centre", "distance_km": 0.46, "notes": "Convenient local centre." [cite: 25, 63, 142] },
+  
+  // SCHOOLS
+  { "category": "School", "name": "Table View High School", "distance_km": 0.93, "notes": "Nearby secondary school." [cite: 27, 66, 141] },
+  { "category": "School", "name": "Elkanah House (Sunningdale)", "distance_km": 1.60, "notes": "Independent school." [cite: 28, 66, 141] },
+  { "category": "School", "name": "Parklands College", "distance_km": 1.66, "notes": "Independent school." [cite: 29, 66, 141] },
+  
+  // FINANCING & LEGAL ENTITIES
+  { "category": "Legal", "name": "Transferring Attorneys", "entity": "STBB (Smith Tabata Buchanan Boyes)", "distance_km": null, "notes": "Handles the sale process." [cite: 110, 149] },
+  { "category": "Finance", "name": "Bond Originator", "entity": "BetterBond", "distance_km": null, "notes": "Assisting with 100% financing options." [cite: 111, 143, 144, 163] }
+]
