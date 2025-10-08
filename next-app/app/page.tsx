@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link'; // FIX: Re-added the missing Link import
+import Link from 'next/link';
 
 export default function Home() {
   // Constants
@@ -7,7 +7,7 @@ export default function Home() {
   const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
   const contactAddress = '154 Arum Road, Table View, 7441';
 
-  // Array of features for the new section
+  // Array of features for the Amenities section
   const features = [
     { title: "Low Maintenance", description: "Lock-up-and-go lifestyle.", icon: "🏠" },
     { title: "Secure Living", description: "Electric fencing and access control.", icon: "🔑" },
@@ -16,6 +16,40 @@ export default function Home() {
     { title: "Modern Finishes", description: "Contemporary kitchen and bathroom fittings.", icon: "✨" },
     { title: "Connectivity", description: "Fibre-ready infrastructure for fast internet.", icon: "⚡️" },
   ];
+
+  // Data based on the Pricelist 04 October 2025
+  const floorPlans = [
+    { 
+      name: "1 Bedroom Units", 
+      size: "45m² - 48m²", 
+      price: "From R1,500,000", 
+      description: "Ideal for first-time buyers and investors.",
+      imagePath: "/images/plans/one-bed-plan.jpg" 
+    },
+    { 
+      name: "2 Bedroom Units", 
+      size: "67m² - 68m²", 
+      price: "From R2,100,000", 
+      description: "Spacious living with room to grow.",
+      imagePath: "/images/plans/two-bed-plan.jpg"
+    },
+    { 
+      name: "Loft Apartments", 
+      size: "77m²", 
+      price: "R2,600,000", 
+      description: "Exclusive third-floor units with loft spaces.",
+      imagePath: "/images/plans/loft-plan.jpg" 
+    },
+  ];
+
+  // Data for the new Lifestyle section
+  const lifestyleCards = [
+    { title: "Kite Surfing", description: "Minutes from the famous Blouberg Beach.", imagePath: "/images/lifestyle/kitesurf.jpg" },
+    { title: "Table Mountain Views", description: "Unobstructed views from your balcony.", imagePath: "/images/lifestyle/table-mountain-view.jpg" },
+    { title: "Local Dining", description: "Close proximity to top-rated restaurants and cafes.", imagePath: "/images/lifestyle/fine-dining.jpg" },
+    { title: "Shopping Access", description: "Walkable distance to Bayside Mall and shopping centres.", imagePath: "/images/lifestyle/shopping.jpg" },
+  ];
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -60,7 +94,36 @@ export default function Home() {
       <main className="flex-grow container mx-auto px-6 py-12">
         
         {/* ======================================================================
-          FEATURES AND AMENITIES SECTION (New Content)
+          LIFESTYLE SECTION (New Carousel/Card Section)
+          ======================================================================
+        */}
+        <section className="py-16">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
+            The Table View Lifestyle Awaits
+          </h2>
+          <div className="flex space-x-6 overflow-x-scroll pb-4 scrollbar-hide md:grid md:grid-cols-4 md:space-x-0">
+            {lifestyleCards.map((card, index) => (
+              <div key={index} className="flex-shrink-0 w-72 md:w-full bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                {/* NOTE: Placeholder Image Path - Requires image files in /public */}
+                <Image 
+                  src={card.imagePath} 
+                  alt={card.title} 
+                  width={300} 
+                  height={200} 
+                  className="w-full h-40 object-cover" 
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold mb-1 text-gray-900">{card.title}</h3>
+                  <p className="text-gray-600 text-sm">{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+        {/* ======================================================================
+          FEATURES AND AMENITIES SECTION
           ======================================================================
         */}
         <section className="py-12">
@@ -73,6 +136,40 @@ export default function Home() {
                 <p className="text-4xl mb-4">{feature.icon}</p>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ======================================================================
+          FLOOR PLAN GALLERY SECTION (New Carousel/Card Section)
+          ======================================================================
+        */}
+        <section className="py-16">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
+            Apartment Floor Plans
+          </h2>
+          <div className="flex space-x-6 overflow-x-scroll pb-4 scrollbar-hide md:grid md:grid-cols-3 md:space-x-0">
+            {floorPlans.map((plan, index) => (
+              <div key={index} className="flex-shrink-0 w-72 md:w-full bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
+                {/* NOTE: Placeholder Image Path - Requires image files in /public */}
+                <Image 
+                  src={plan.imagePath} 
+                  alt={`${plan.name} Floor Plan`} 
+                  width={300} 
+                  height={250} 
+                  className="w-full h-auto object-cover border-b" 
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-2xl font-bold mb-1 text-gray-900">{plan.name}</h3>
+                  <p className="text-gray-500 text-sm mb-2">{plan.size} | {plan.price}</p>
+                  <p className="text-gray-700 text-base mb-4">{plan.description}</p>
+                  <Link href="#contact" passHref legacyBehavior>
+                    <a className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full text-sm shadow-md transition duration-300 inline-block">
+                      Secure Your Unit
+                    </a>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
