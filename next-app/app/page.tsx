@@ -1,15 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// Assuming the Inter font is defined in your layout.tsx for best practice
-// import { Inter } from 'next/font/google'; 
-// const inter = Inter({ subsets: ['latin'] }); 
 
 export default function Home() {
   // --- CONFIGURATION VARIABLES ---
   const logoPath = '/images/logos/igneous-property-logo.png';
   const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
-  const masterPlanPath = '/images/floorplans/master-floor-plan.jpg'; // Path to the colour-coded master plan
-  const heroImagePath = '/images/lifestyle/cornerstone-hero.jpg'; // Path to the main architectural render
+  const masterPlanPath = '/images/floorplans/master-floor-plan.jpg'; // Colour-coded master plan
+  const heroImagePath = '/images/lifestyle/cornerstone-hero.jpg'; // Main architectural render
 
   // Data for the Features & Amenities Section (using icons/emojis as placeholders)
   const mainFeatures = [
@@ -140,7 +137,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* --- 3A. DESIGN & STRENGTH CARDS (Under Lifestyle) --- */}
         <section id="design-strength" className="py-16 bg-gray-100">
           <div className="container mx-auto px-6">
