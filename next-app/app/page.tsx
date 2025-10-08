@@ -4,41 +4,30 @@ import Link from 'next/link';
 export default function Home() {
   // --- CONFIGURATION VARIABLES ---
   const logoPath = '/images/logos/igneous-property-logo.png';
-  const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
+  const betterBondLogoPath = '/images/logos/betterbond-logo.png';
   const masterPlanPath = '/images/floorplans/master-floor-plan.jpg'; // Path to the colour-coded master plan
   const heroImagePath = '/images/lifestyle/cornerstone-hero.jpg'; // Path to the main architectural render
   const whatsappNumber = '27724503626'; // Your WhatsApp number
+  const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
 
-  // Data for the Features & Amenities Section (using icons/emojis as placeholders)
-  const mainFeatures = [
-    { icon: '🔑', title: 'Low Maintenance', description: 'Enjoy a true lock-up-and-go lifestyle ideal for modern professionals.' },
-    { icon: '🚨', title: 'Secure Living', description: 'Full perimeter electric fencing, automated access control, and dedicated security measures.' },
-    { icon: '🅿️', title: 'Parking', description: 'One dedicated parking bay provided per apartment for maximum convenience.' },
-    { icon: '☀️', title: 'Green Energy', description: 'Sustainable living supported by solar-assisted water heating systems.' },
-    { icon: '🏠', title: 'Modern Finishes', description: 'Contemporary kitchen cabinetry, quality bathroom fittings, and stylish vinyl flooring.' },
-    { icon: '⚡️', title: 'Connectivity', description: 'Fibre-ready infrastructure pre-installed for lightning-fast internet access.' },
+  // Data for the Corrected Features Section (Built for Modern Living)
+  const correctedFeatures = [
+    { icon: '🛡️', title: 'Safety and Security', description: 'Advanced access control, garage door automation. The security is further enhanced with backup power storage.' },
+    { icon: '⭐', title: 'Sustainable Living', description: 'Onsite water storage, central hot water boiler system.' },
+    { icon: '⚡', title: 'Prepaid Meters', description: 'Each unit has prepaid meters for: Hot and cold water, and electricity.' },
+    { icon: '🔥', title: 'Gas Cooking', description: 'Each unit features a Black Defy gas hob with regulation-compliant secure storage for 9kg gas bottles.' },
+    { icon: '🏡', title: 'Private Balconies', description: 'A private balcony for each unit.' },
+    { icon: '🅿️', title: 'Parking', description: 'One off-street secure parking bay per unit.' },
   ];
 
-  // Data for the Floor Plan Cards (Derived from Pricelist)
-  const floorPlans = [
-    {
-      name: 'The Arum (1 Bedroom)',
-      size: '45m² - 48m² Total Size',
-      price: 'From R 1,500,000',
-      description: 'The efficient 1-bedroom unit perfect for first-time buyers and investors.',
-    },
-    {
-      name: 'The Cornerstone (2 Bedroom)',
-      size: '67m² - 68m² Total Size',
-      price: 'From R 2,100,000',
-      description: 'The spacious 2-bedroom unit designed for small families or sharers.',
-    },
-    {
-      name: 'The Loft (2 Bed, 2 Bath)',
-      size: '77m² Total Size',
-      price: 'From R 2,600,000',
-      description: 'Exclusive 3rd-floor loft units with two bathrooms and maximum space.',
-    },
+  // Data for the Floor Plan Cards (Individual Units)
+  const individualUnits = [
+    { unit: '103', type: '1 Bedroom - Type A', size: '45m²', price: 'R 1,500,000', status: 'SOLD' },
+    { unit: '104', type: '1 Bedroom - Type B', size: '48m²', price: 'R 1,600,000', status: 'Under Offer' },
+    { unit: '105', type: '1 Bedroom - Type C', size: '48m²', price: 'R 1,600,000', status: 'Available' },
+    { unit: '102', type: '2 Bedroom - Type D', size: '67m²', price: 'R 2,100,000', status: 'Available' },
+    { unit: '202', type: '2 Bedroom - Type D', size: '68m²', price: 'R 2,100,000', status: 'Available' },
+    { unit: '302', type: '2 Bedroom Loft', size: '77m²', price: 'R 2,600,000', status: 'Available' },
   ];
 
   // --- COMPONENT RENDER ---
@@ -85,27 +74,30 @@ export default function Home() {
         {/* --- 1A. DESIGNED FOR LIVING (DESCRIPTIVE BLOCK) --- */}
         <section id="designed-for-living" className="py-16 bg-white">
           <div className="container mx-auto px-6 text-center max-w-4xl">
-            <h2 className="text-5xl font-extrabold mb-6 text-gray-900">
-              Designed For Living, Crafted For Life
-            </h2>
-            <p className="text-lg text-gray-700">
-              Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium apartments within a secure and well-managed community, designed to deliver long-term value through superior standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom units, the project presents an exceptional investment opportunity.
-            </p>
+            {/* The image shows a full-width background here, mimicking it with a container */}
+            <div className="relative py-12 px-6 bg-gray-50 rounded-lg shadow-xl">
+              <h2 className="text-5xl font-extrabold mb-6 text-gray-900">
+                Designed For Living, Crafted For Life
+              </h2>
+              <p className="text-lg text-gray-700">
+                Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium apartments within a secure and well-managed community, designed to deliver long-term value through superior standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom units, the project presents an exceptional investment opportunity.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* --- 1B. FEATURES & AMENITIES SECTION --- */}
+        {/* --- 1B. FEATURES: BUILT FOR MODERN LIVING CARDS --- */}
         <section id="features" className="py-16 bg-gray-50">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
-              Features & Amenities
+              Built for Modern Living
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {mainFeatures.map((feature, index) => (
+              {correctedFeatures.map((feature, index) => (
                 <div key={index} className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg transition duration-300 hover:shadow-xl">
-                  <div className="text-4xl mb-4 p-3 bg-blue-100 rounded-full">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 text-center">{feature.description}</p>
+                  <div className="text-4xl mb-4 p-3 bg-blue-100 rounded-full text-blue-600">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900 text-center">{feature.title}</h3>
+                  <p className="text-gray-600 text-center text-sm">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -119,19 +111,21 @@ export default function Home() {
               The Table View Lifestyle
             </h2>
             {/* Horizontal Scroll/Carousel Container */}
-            <div className="flex space-x-6 pb-4 overflow-x-scroll scrollbar-hide md:grid md:grid-cols-3 md:gap-6 md:space-x-0">
+            <div className="flex space-x-6 pb-4 overflow-x-scroll scrollbar-hide">
               {['Kite Surfing', 'Sunset Views', 'Fine Dining'].map((item, index) => (
-                <div key={index} className="flex-shrink-0 w-80 md:w-full bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
+                <div key={index} className="flex-shrink-0 w-80 h-96 bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl relative">
+                  {/* Placeholder Image to match correct version.jpg */}
                   <Image
-                    src={`/images/lifestyle/lifestyle-${index + 1}.jpg`}
+                    src={`/images/lifestyle/lifestyle-${index + 1}.jpg`} // Placeholder image path
                     alt={item}
                     width={320}
-                    height={200}
-                    className="w-full h-48 object-cover"
+                    height={384}
+                    className="w-full h-full object-cover"
                   />
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold text-gray-900">{item}</h3>
-                    <p className="text-sm text-gray-600 mt-1">Cape Town living at its absolute best.</p>
+                  {/* Text Overlay */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
+                    <h3 className="text-2xl font-bold">{item}</h3>
+                    <p className="text-sm mt-1">Dramatic coastal scenery with Table Mountain backdrop.</p>
                   </div>
                 </div>
               ))}
@@ -139,45 +133,8 @@ export default function Home() {
           </div>
         </section>
         
-        {/* --- 3A. DESIGN & STRENGTH CARDS (Under Lifestyle) --- */}
-        <section id="design-strength" className="py-16 bg-gray-100">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 bg-white rounded-xl shadow-xl">
-                <h3 className="text-2xl font-bold mb-3">Design & Strength</h3>
-                <p className="text-gray-700 text-sm">
-                  Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry. Built with a full reinforced concrete frame, every apartment delivers structural integrity, acoustic comfort, and reduced long-term maintenance.
-                </p>
-                <a href="#features" className="text-blue-600 text-sm mt-3 inline-block hover:underline">
-                  Read Less
-                </a>
-              </div>
-
-              <div className="p-6 bg-white rounded-xl shadow-xl">
-                <h3 className="text-2xl font-bold mb-3">Sustainable Systems</h3>
-                <p className="text-gray-700 text-sm">
-                  Cornerstone incorporates practical green features, including onsite water storage, central hot water boiler system. These sustainable systems reduce environmental impact while providing reliable, efficient utilities for all residents.
-                </p>
-                <a href="#features" className="text-blue-600 text-sm mt-3 inline-block hover:underline">
-                  Read Less
-                </a>
-              </div>
-
-              <div className="p-6 bg-white rounded-xl shadow-xl">
-                <h3 className="text-2xl font-bold mb-3">Local Advantage</h3>
-                <p className="text-gray-700 text-sm">
-                  Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network. It combines a coastal lifestyle with everyday convenience, making it an ideal location for both living and investment.
-                </p>
-                <a href="#features" className="text-blue-600 text-sm mt-3 inline-block hover:underline">
-                  Read Less
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* --- 3B. MASTER FLOOR PLAN OVERVIEW --- */}
-        <section id="layouts" className="py-16 bg-white">
+        {/* --- 3A. MASTER FLOOR PLAN OVERVIEW --- */}
+        <section id="layouts" className="py-16 bg-gray-50">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-5xl font-extrabold mb-4 text-gray-800">
               Explore the Layouts
@@ -187,7 +144,7 @@ export default function Home() {
             </p>
 
             {/* Master Plan Image and Filters */}
-            <div className="mb-10 p-4 border border-gray-200 rounded-xl shadow-inner">
+            <div className="mb-10 p-4 border border-gray-200 rounded-xl shadow-inner bg-white">
               <Image
                 src={masterPlanPath}
                 alt="Colour Coded Master Floor Plan Layout"
@@ -222,29 +179,56 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- 4. FLOOR PLAN CARDS (Horizontal Scroll) --- */}
-        <section id="floorplans" className="py-16 bg-gray-50">
+        {/* --- 3B. INDIVIDUAL UNIT CAROUSEL SECTION --- */}
+        <section id="available-units" className="py-16 bg-white">
           <div className="container mx-auto px-6">
             <h2 className="text-5xl font-extrabold text-center mb-10 text-gray-800">
               Available Apartments
             </h2>
-            <div className="flex space-x-6 pb-4 overflow-x-scroll scrollbar-hide md:grid md:grid-cols-3 md:gap-6 md:space-x-0">
-              {floorPlans.map((plan, index) => (
-                <div key={index} className="flex-shrink-0 w-80 md:w-full bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl">
-                  {/* Placeholder for Plan Image */}
-                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-600 font-semibold text-sm">
-                    PLAN IMAGE - UNIT {index + 1}
+            <div className="flex space-x-6 pb-4 overflow-x-scroll scrollbar-hide">
+              {individualUnits.map((unit, index) => (
+                <div key={index} className="flex-shrink-0 w-80 bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100">
+                  {/* Status Tag */}
+                  <span className={`absolute top-0 right-0 m-3 px-3 py-1 text-xs font-bold text-white rounded-full 
+                    ${unit.status === 'SOLD' ? 'bg-red-500' : unit.status === 'Under Offer' ? 'bg-orange-500' : 'bg-green-500'}`}>
+                    {unit.status}
+                  </span>
+                  
+                  {/* Placeholder for Unit Image */}
+                  <div className="relative w-full h-64 bg-gray-200 flex items-center justify-center">
+                    <Image
+                      src={`/images/units/unit-${unit.unit}.jpg`} // Placeholder image path
+                      alt={`Floor Plan for Unit ${unit.unit}`}
+                      width={320}
+                      height={256}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-2xl font-bold mb-1 text-gray-900">{plan.name}</h3>
-                    <p className="text-lg text-green-600 font-extrabold mb-2">{plan.price}</p>
-                    <p className="text-sm text-gray-600 mb-3">{plan.size}</p>
-                    <p className="text-gray-700 text-sm mb-4">{plan.description}</p>
-                    <Link href="#contact" passHref legacyBehavior>
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300">
-                        Enquire Now
-                      </button>
-                    </Link>
+
+                  {/* Details Block (Dark Background) */}
+                  <div className="p-5 bg-gray-800 text-white">
+                    <h3 className="text-2xl font-bold mb-3">{unit.type}</h3>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <p className="font-semibold text-gray-400">Unit No:</p>
+                        <p className="font-bold">{unit.unit}</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-400">Size:</p>
+                        <p className="font-bold">{unit.size}</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-400">Price:</p>
+                        <p className="font-bold text-green-400">{unit.price}</p>
+                      </div>
+                      <div className="col-span-2 mt-3">
+                        <Link href="#contact" passHref legacyBehavior>
+                          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-300">
+                            Enquire Now
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -252,7 +236,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- 5. BETTERBOND FINANCING SECTION --- */}
+        {/* --- 4. BETTERBOND FINANCING SECTION --- */}
         <section id="financing" className="bg-blue-900 py-16">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-white items-center">
@@ -263,7 +247,6 @@ export default function Home() {
                   Cornerstone on Arum buyers enjoy exclusive access to **BetterBond** – South Africa's trusted bond originator. With tailored guidance and faster approvals, securing your new home has never been easier.
                 </p>
 
-                <h3 className="text-2xl font-bold mt-4">Why BetterBond?</h3>
                 <div className="space-y-4">
                   {[
                     { icon: '🏆', text: '79% Success Rate: A higher approval rate than direct bank applications.' },
@@ -292,7 +275,7 @@ export default function Home() {
                 <div className="flex justify-center mb-6">
                   {/* BetterBond Logo Placeholder */}
                   <Image
-                    src="/images/logos/betterbond-logo.png"
+                    src={betterBondLogoPath}
                     alt="BetterBond Logo"
                     width={200}
                     height={50}
@@ -346,7 +329,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- 6. CONTACT SECTION --- */}
+        {/* --- 5. CONTACT SECTION --- */}
         <section id="contact" className="py-16 bg-white">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">Contact Us</h2>
