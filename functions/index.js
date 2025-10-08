@@ -1,11 +1,9 @@
 const functions = require('firebase-functions');
 
-const hello = () => {
-  return "Hello from Firebase!";
-};
-
 exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send(hello());
+  response.send("Hello from Firebase!");
 });
 
-exports.hello = hello;
+exports.onInit = functions.https.onInit(() => {
+  // No-op
+});
