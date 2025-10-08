@@ -1,33 +1,15 @@
-/**
- * This file contains the main page component for the Arum Road development website.
- * It includes the contact section and the footer information as requested.
- * NOTE: Add your main website content (hero, features, galleries, etc.) between the header and contact sections.
- */
 import Image from 'next/image';
 
-// Assuming the main content component is named 'MainContent' and is defined elsewhere, 
-// or you will fill in the content later. For this snippet, we will structure the JSX.
-
 export default function Home() {
-  // --- Contact Details ---
-  const contact = {
-    grantPhone: '072 450 3626',
-    whatsapp: '27724503626',
-    email: 'sales@igneousproperty.co.za',
-    address: '154 Arum Road, Table View, 7441',
-  };
-
-  // The logo path is adjusted to be relative to the /public folder, 
+  // The logo path is adjusted to be relative to the /public folder,
   // as Next.js serves assets from public/ as the root directory.
-  // We assume the logo file is named 'logo.png' or a similar common name.
-  // If the actual image file inside /public/images/logos is named differently, update the 'logoPath' below.
-  const logoPath = '/images/logos/logo-placeholder.png'; // Placeholder name for the file in the public directory
+  const logoPath = '/images/logos/igneous-property-logo.png'; // Updated to the final logo path
   const igneousPropertyUrl = 'https://www.igneousproperty.co.za';
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* ======================================================================
-        HEADER/NAVIGATION GOES HERE 
+        HEADER/NAVIGATION GOES HERE
         ======================================================================
       */}
       <header className="bg-gray-100 p-4 shadow-md">
@@ -37,87 +19,86 @@ export default function Home() {
       </header>
 
       {/* ======================================================================
-        MAIN PAGE CONTENT GOES HERE (Hero, Gallery, Features, etc.)
+        MAIN CONTENT GOES HERE
         ======================================================================
       */}
-      <main className="flex-grow">
-        <section className="py-20 text-center">
-          <h2 className="text-3xl font-bold">Your Main Project Content Will Go Here</h2>
-          <p className="mt-4 text-gray-600">This is where you will place the images, descriptions, and features of the Arum Road Apartments.</p>
+      <main className="flex-grow container mx-auto px-6 py-12">
+        {/* Example Section - Replace with your actual content */}
+        <section className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Welcome to Arum Road Development</h2>
+          <p className="text-gray-700">
+            Discover modern living in the heart of Table View.
+          </p>
         </section>
 
-        {/* ======================================================================
-          1. CONTACT DETAILS SECTION (As Requested)
-          ======================================================================
-        */}
-        <section id="contact" className="py-20 bg-gray-50">
+        {/* Contact Details Section */}
+        <section id="contact" className="py-12 bg-white">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl font-extrabold text-gray-800 mb-10 border-b-2 border-blue-500 inline-block pb-1">
-              Contact Us
-            </h2>
-            <div className="text-xl space-y-4">
-              <p>
-                <span className="font-semibold text-gray-700">Contact Grant on:</span>{' '}
-                <a href={`tel:+${contact.whatsapp}`} className="text-blue-600 hover:text-blue-800 transition duration-150">
-                  {contact.grantPhone}
-                </a>
+            <h2 className="text-4xl font-bold text-center mb-8">Contact Us</h2>
+            <div className="text-lg mb-8">
+              <p className="mb-2">
+                Contact Grant on: <a href="tel:+27724503626" className="text-blue-600 hover:underline">072 450 3626</a>
               </p>
-              <p>
-                <span className="font-semibold text-gray-700">Email:</span>{' '}
-                <a href={`mailto:${contact.email}`} className="text-blue-600 hover:text-blue-800 transition duration-150">
-                  {contact.email}
-                </a>
+              <p className="mb-2">
+                Email: <a href="mailto:sales@igneousproperty.co.za" className="text-blue-600 hover:underline">sales@igneousproperty.co.za</a>
               </p>
-              <p>
-                <span className="font-semibold text-gray-700">WhatsApp:</span>{' '}
-                <a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-600 transition duration-150 flex justify-center items-center">
-                  +27 72 450 3626 (Click to Chat)
-                </a>
+              <p className="mb-2">
+                WhatsApp: <a href="https://wa.me/27724503626" className="text-blue-600 hover:underline">+27 72 450 3626</a>
               </p>
-              <p>
-                <span className="font-semibold text-gray-700">Address:</span> {contact.address}
-                <br />
-                {/* Placeholder for Google Map Link/Embed */}
-                <a href={`https://maps.google.com/?q=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:underline mt-1 block">
-                  View on Google Maps
-                </a>
+              <p className="mb-2">
+                Address: 154 Arum Road, Table View, 7441
               </p>
+            </div>
+
+            {/* Google Map Embed */}
+            <div className="w-full h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.1922875972264!2d18.494940315210778!3d-33.86447618065823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!1m4!1m3!1d200!2d18.495!3d-33.864476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5f4b7b2082f5%3A0xb1b3c8c937348c21!2s154%20Arum%20Rd%2C%20Table%20View%2C%20Cape%20Town%2C%207441%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1678871200000!5m2!1sen!2sus" // This specific URL points to 154 Arum Road
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map of 154 Arum Road, Table View"
+              ></iframe>
             </div>
           </div>
         </section>
+
+        {/* Example Section - Replace with your actual content */}
+        <section className="text-center my-12">
+          <h2 className="text-3xl font-bold mb-4">Project Highlights</h2>
+          <p className="text-gray-700">
+            Learn more about the features and amenities.
+          </p>
+        </section>
       </main>
 
+
       {/* ======================================================================
-        2. FOOTER SECTION (Company Information and Logo)
+        FOOTER GOES HERE
         ======================================================================
       */}
-      <footer className="bg-gray-900 text-gray-300 py-6 mt-auto">
+      <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-          
-          {/* Copyright and Company Link */}
-          <div className="mb-4 md:mb-0 text-center md:text-left text-sm">
-            <p className="flex items-center justify-center md:justify-start">
-              &copy; {new Date().getFullYear()} Another Development by{' '}
-              <a 
-                href={igneousPropertyUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-blue-400 hover:text-blue-300 transition duration-150 font-medium ml-1"
-              >
+          <div className="mb-4 md:mb-0">
+            <p>&copy; {new Date().getFullYear()} Another Development by{' '}
+              <a href={igneousPropertyUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                 Igneous Property
               </a>
             </p>
           </div>
-          
-          {/* Logo Placeholder */}
+
+          {/* Logo Placeholder - Updated with actual logo path */}
           <div className="flex items-center">
             {/* The image path below is relative to your /public folder */}
-            <Image 
-              src={logoPath} 
-              alt="Igneous Property Logo" 
+            <Image
+              src={logoPath}
+              alt="Igneous Property Logo"
               width={100} // Set appropriate size
               height={40} // Set appropriate size
-              className="h-10 w-auto" 
+              className="h-10 w-auto"
             />
           </div>
         </div>
