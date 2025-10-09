@@ -26,16 +26,6 @@ const heroData = {
 
 export default function Home() {
 
-  // Mock data for carousels
-  const lifestyleSlides = [
-    { title: "Pool", description: "Relax by the beautiful pool." },
-    { title: "Gym", description: "State-of-the-art fitness center." },
-  ];
-
-  const unitCards = [
-    { unitName: "Type A", beds: 2, baths: 1, sqft: 750, price: "$250,000" },
-    { unitName: "Type B", beds: 3, baths: 2, sqft: 1000, price: "$350,000" },
-  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -50,7 +40,7 @@ export default function Home() {
         <section id="floor-plans" className="py-16">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Find Your Perfect Home</h2>
-                <UnitCardCarousel units={unitCards} />
+                <UnitCardCarousel />
             </div>
         </section>
 
@@ -58,7 +48,7 @@ export default function Home() {
         <section id="lifestyle" className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Experience Life at Cornerstone</h2>
-                <LifestyleCarousel slides={lifestyleSlides} />
+                <LifestyleCarousel />
             </div>
         </section>
 
