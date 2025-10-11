@@ -1,34 +1,16 @@
-# dependencies
+
+# Dependencies
 /node_modules
-/.pnp
-.pnp.js
+/functions/node_modules
 
-# next.js build output
-/.next/
-/out/
-/next-app/.next/
-/next-app/out/
+# Build artifacts
+/.next
+/out
 
-# production artifacts
-/artifacts/
-/dist/
-/build/
-
-# IDE/System Files
-.DS_Store
-.vscode/
-
-# Firebase Cache & Deployment Files
-.firebase/
+# Firebase
+.firebase
 .firebaserc
-firebase-debug.log
 
-# Logs and Lockfiles
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-
-# Cleanup files after running deployment or cleanup scripts
-*~
-#*
+# Other
+.vscode
+*.lock

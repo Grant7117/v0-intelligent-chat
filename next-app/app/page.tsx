@@ -6,13 +6,13 @@ import Image from 'next/image';
 // --- CRITICAL PATH FIX APPLIED HERE ---
 // Paths are CORRECTED to './components/'
 import Hero from './components/Hero'; 
-import LifestyleCarousel from './components/LifestyleCarousel'; 
-import UnitCardCarousel from './components/UnitCardCarousel'; 
 
 // TASK 2: Performance optimization (Dynamic Imports)
 // Paths are also CORRECTED here
 const CallToAction = dynamic(() => import('./components/CallToAction'), { ssr: false });
 const ChatbotComponent = dynamic(() => import('./components/ChatbotComponent'), { ssr: false });
+const LifestyleCarousel = dynamic(() => import('./components/LifestyleCarousel'), { ssr: false });
+const UnitCardCarousel = dynamic(() => import('./components/UnitCardCarousel'), { ssr: false });
 
 // --- FINAL VERIFIED MOCK DATA ---
 const heroData = {
@@ -28,13 +28,15 @@ export default function Home() {
 
   // Mock data for carousels
   const lifestyleSlides = [
-    { title: "Pool", description: "Relax by the beautiful pool." },
-    { title: "Gym", description: "State-of-the-art fitness center." },
+    { src: "/images/lifestyle/image-bayside-mall-b.png", alt: "Bayside Mall" },
+    { src: "/images/lifestyle/image-big-bay-beach.png", alt: "Big Bay Beach" },
+    { src: "/images/lifestyle/image-bloubergstrand-beach.png", alt: "Bloubergstrand Beach" },
+    { src: "/images/lifestyle/image-blue-peter-hotel.png", alt: "Blue Peter Hotel" },
   ];
 
   const unitCards = [
-    { unitName: "Type A", beds: 2, baths: 1, sqft: 750, price: "$250,000" },
-    { unitName: "Type B", beds: 3, baths: 2, sqft: 1000, price: "$350,000" },
+    { unitName: "Type A", beds: 2, baths: 1, sqft: 750, price: "$250,000", src: "/images/units/101-a.png", alt: "Unit Type A" },
+    { unitName: "Type B", beds: 3, baths: 2, sqft: 1000, price: "$350,000", src: "/images/units/102-a.png", alt: "Unit Type B" },
   ];
 
   return (
@@ -50,7 +52,7 @@ export default function Home() {
         <section id="floor-plans" className="py-16">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Find Your Perfect Home</h2>
-                <UnitCardCarousel units={unitCards} />
+                <UnitCardCarousel images={unitCards} />
             </div>
         </section>
 

@@ -1,11 +1,42 @@
-// next-app/app/components/PlaceholderName.jsx
-import React from 'react';
 
-export default function PlaceholderComponent(props) { 
-  // You must edit the text below to match the component name (e.g., 'Chatbot')
+import * as React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+
+export default function LifestyleCarousel({ slides }) {
+  if (!slides || slides.length === 0) {
+    return <div>No slides to display</div>;
+  }
+
   return (
-    <div className="p-4 border-2 border-dashed border-gray-400 bg-yellow-50 text-center">
-      <h3 className="text-lg font-bold text-yellow-700">COMPONENT PLACEHOLDER: {props.name}</h3>
-    </div>
+    <Carousel className="w-full max-w-4xl">
+      <CarouselContent>
+        {slides.map((item, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="relative flex aspect-video items-center justify-center p-6">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   );
 }

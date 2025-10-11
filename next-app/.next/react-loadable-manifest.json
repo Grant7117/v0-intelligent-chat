@@ -1,0 +1,28 @@
+{
+  "app/page.tsx -> ./components/CallToAction": {
+    "id": 5044,
+    "files": [
+      "static/chunks/44.f17acbbf55de0e71.js"
+    ]
+  },
+  "app/page.tsx -> ./components/ChatbotComponent": {
+    "id": 6093,
+    "files": [
+      "static/chunks/93.ccef956e72219d32.js"
+    ]
+  },
+  "app/page.tsx -> ./components/LifestyleCarousel": {
+    "id": 9770,
+    "files": [
+      "static/chunks/163.d2bde1ca78760f56.js",
+      "static/chunks/770.dd140a7282076ef0.js"
+    ]
+  },
+  "app/page.tsx -> ./components/UnitCardCarousel": {
+    "id": 1307,
+    "files": [
+      "static/chunks/163.d2bde1ca78760f56.js",
+      "static/chunks/307.9db1a49c5560d4e7.js"
+    ]
+  }
+}
