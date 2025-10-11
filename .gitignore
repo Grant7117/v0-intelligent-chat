@@ -1,16 +1,27 @@
 
 # Dependencies
+**/node_modules
 /node_modules
 /functions/node_modules
+/next-app/node_modules
 
-# Build artifacts
-/.next
-/out
+# Build Folder
+/next-app/build
+/next-app/out
+/next-app/.next
+
+# DS_Store
+.DS_Store
 
 # Firebase
 .firebase
 .firebaserc
 
+# Env
+.env
+.env.local
+
 # Other
-.vscode
 *.lock
+*.log
+.vscode
